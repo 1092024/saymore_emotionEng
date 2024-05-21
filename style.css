@@ -103,3 +103,26 @@
 #scaredTxt {
   display: none;
 }
+
+.ballIntroTxt {
+  width: 34vw;
+  height: 20vh;
+  text-align: center;
+  position: fixed;
+  top: 45%;
+  right: 32%;
+  line-height: 25px;
+}
+
+.homeBtn {
+  position: fixed;
+  top: 1%;
+  left: 0.5%;
+}
+
+.homeBtn:hover {
+  cursor: pointer;
+}
+#gobackBtn {
+  display: none;
+}

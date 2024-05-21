@@ -7,6 +7,10 @@ let sad = document.getElementById("sad");
 let scared = document.getElementById("scared");
 let beforeTxt = document.getElementById("beforeTxt");
 
+let ballIntroTxt = document.getElementById("ballIntroTxt");
+let gohomeBtn = document.getElementById("gohomeBtn");
+let gobackBtn = document.getElementById("gobackBtn");
+
 let happyTxt = document.getElementById("happyTxt");
 let angryTxt = document.getElementById("angryTxt");
 let sadTxt = document.getElementById("sadTxt");
@@ -23,6 +27,7 @@ function ballDrop() {
   angry.classList.add("drop");
   sad.classList.add("drop");
   scared.classList.add("drop");
+  ballIntroTxt.style.display = "none";
 }
 
 function handleTransitionEnd(event) {
@@ -30,18 +35,26 @@ function handleTransitionEnd(event) {
     beforeTxt.style.display = "none";
     happyTxt.style.display = "block";
     happy.removeEventListener("transitionend", handleTransitionEnd);
+    gohomeBtn.style.display = "none";
+    gobackBtn.style.display = "block";
   } else if (event.target === angry) {
     beforeTxt.style.display = "none";
     angryTxt.style.display = "block";
     angry.removeEventListener("transitionend", handleTransitionEnd);
+    gohomeBtn.style.display = "none";
+    gobackBtn.style.display = "block";
   } else if (event.target === sad) {
     beforeTxt.style.display = "none";
     sadTxt.style.display = "block";
     sad.removeEventListener("transitionend", handleTransitionEnd);
+    gohomeBtn.style.display = "none";
+    gobackBtn.style.display = "block";
   } else if (event.target === scared) {
     beforeTxt.style.display = "none";
     scaredTxt.style.display = "block";
     scared.removeEventListener("transitionend", handleTransitionEnd);
+    gohomeBtn.style.display = "none";
+    gobackBtn.style.display = "block";
   }
 }
 
@@ -60,4 +73,12 @@ sad.addEventListener("click", () => {
 scared.addEventListener("click", () => {
   scared.addEventListener("transitionend", handleTransitionEnd);
   ballDrop();
+});
+
+gohomeBtn.addEventListener("click", () => {
+  window.location.href = "https://saymore-web.netlify.app/english.html";
+});
+
+gobackBtn.addEventListener("click", () => {
+  window.location.reload();
 });
